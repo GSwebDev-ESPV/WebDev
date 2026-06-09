@@ -39,3 +39,23 @@
             <a href="index.html" class="btn-explorar">Voltar ao início</a>
         </div>
     </section>
+
+    <section class="formulario-quiz">
+        <h2>Iniciar Quiz</h2>
+
+        <form id="formQuiz">
+            <input type="text" id="nome" placeholder="Digite seu nome">
+            <button type="submit"> Começar </button>
+        </form>
+    </section>
+
+    <section class="quiz">
+        <h2>Quiz AstraLink</h2>
+
+        <div id="perguntas"></div>
+
+        <button class="btn-resultado" onclick="corrigirQuiz()"> Ver Resultado </button>
+        <button class="btn-reiniciar" onclick="reiniciarQuiz()"> Reiniciar Quiz</button>
+
+        <div id="resultado"></div>
+    </section>
