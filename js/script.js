@@ -93,3 +93,59 @@ correta:0
 }
 
 ];
+
+const container = document.getElementById("perguntas");
+
+perguntas.forEach((q,index)=>{
+
+    let html = `
+    <div class="pergunta">
+        <p>${index+1}. ${q.pergunta}</p>`;
+
+    q.opcoes.forEach((op,i)=>{
+
+        html += `
+        <label>
+            <input
+            type="radio"
+            name="p${index}"
+            value="${i}"
+            >
+
+            ${op}
+
+        </label> `;
+    });
+
+    html += "</div>";
+    container.innerHTML += html;
+
+});
+
+function corrigirQuiz(){
+
+    let pontos = 0;
+    for(let i = 0; i < perguntas.length; i++){
+        const resposta = document.querySelector(`input[name="p${i}"]:checked`);
+
+        if(!resposta){
+            alert("Responda todas as perguntas antes de enviar o quiz.");
+            return;
+        }
+
+    }
+
+    perguntas.forEach((q,index)=>{
+
+        const resposta =  document.querySelector(`input[name="p${index}"]:checked`);
+
+        if(Number(resposta.value) === q.correta){
+            pontos++;
+        }
+
+    });
+
+    document.getElementById("resultado").innerHTML =
+    `Você acertou ${pontos} de ${perguntas.length} perguntas!`;
+
+}
