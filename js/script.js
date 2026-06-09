@@ -149,3 +149,44 @@ function corrigirQuiz(){
     `Você acertou ${pontos} de ${perguntas.length} perguntas!`;
 
 }
+
+function trocarTema(tema){
+
+    if(tema === "azul"){
+
+        document.documentElement.style.setProperty('--fundo','#030712');
+        document.documentElement.style.setProperty('--menu','#0b1120');
+        document.documentElement.style.setProperty('--card','#101827');
+        document.documentElement.style.setProperty('--laranja','#2563eb');
+        document.documentElement.style.setProperty('--laranja-claro','#60a5fa');
+    }
+
+    else if(tema === "laranja"){
+
+        document.documentElement.style.setProperty('--fundo','#1a0d00');
+        document.documentElement.style.setProperty('--menu','#2b1400');
+        document.documentElement.style.setProperty('--card','#3d1f00');
+        document.documentElement.style.setProperty('--laranja','#ff6a00');
+        document.documentElement.style.setProperty('--laranja-claro','#ffb347');
+    }
+
+    else if(tema === "roxo"){
+
+        document.documentElement.style.setProperty('--fundo','#12051f');
+        document.documentElement.style.setProperty('--menu','#1d0d2f');
+        document.documentElement.style.setProperty('--card','#291542');
+        document.documentElement.style.setProperty('--laranja','#9333ea');
+        document.documentElement.style.setProperty('--laranja-claro','#c084fc');
+    }
+}
+function reiniciarQuiz(){
+
+    const radios = document.querySelectorAll('input[type="radio"]');
+
+    radios.forEach(radio => {
+        radio.checked = false;
+    });
+
+    document.getElementById("resultado").innerHTML = "";
+}
+
